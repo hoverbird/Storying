@@ -1,0 +1,34 @@
+<%#
+Heh heh... I like #3 a lot -- it's like, the most spastic & indecisive publisher in the world. "Announcing our fall lineup of... 3,000 books!!?"
+
+Okay I am just going to go ahead & try to jam on some pseudo-code right here -- this is going to be really rough/random!
+%>
+
+<% STORY = Story.new %>
+<% HERO 	 = STORY.hero %>
+<% SETTING = STORY.setting %>
+<% SUPPORT = STORY.supporting_character %>
+
+
+For every time and place, there is a HERO. In this case, one with a <%= HERO.characteristic %> who is <%= HERO.relationship_to_setting %>.
+
+Introduce supporting character (SUPPORT) <%= ", a villian, " if SUPPORT.villain? %> with a <%= SUPPORT.characteristic %>.
+
+Explain SUPPORT's RELATIONSHIP to HERO.
+
+Is SUPPORT isn't already the VILLAIN, introduce VILLAIN with RELATIONSHIP(s) to HERO and/or SUPPORT, and CHARACTERISTIC.
+
+Introduce CONFLICT, optionally involving SUPPORT or <%= SETTING %>.
+
+Repeat N times: Apply TWIST to HERO, SUPPORT, or VILLAIN.
+Each iteration: is CONFLICT a MacGuffin? If so: reveal TRUE CONFLICT. Retroactively inject seed of TRUE CONFLICT into introduction of HERO, SETTING, SUPPORT or VILLAIN.
+
+Decide whether HERO or VILLAIN is victorious.
+
+Apply CONSEQUENCE for HERO, SUPPORT, VILLAIN and/or <%= SETTING %>.
+
+<%#
+Hmm feels like there are too many primitive types... maybe it's possible to collapse some of them together?
+
+Just a weird first pass -- hack on it!
+%>
