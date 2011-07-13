@@ -4,7 +4,7 @@ Heh heh... I like #3 a lot -- it's like, the most spastic & indecisive publisher
 Okay I am just going to go ahead & try to jam on some pseudo-code right here -- this is going to be really rough/random!
 %>
 
-<% STORY = Story.new %>
+<% STORY 	 = Storying::Story.new %>
 <% HERO 	 = STORY.hero %>
 <% SETTING = STORY.setting %>
 <% SUPPORT = STORY.supporting_character %>
@@ -14,7 +14,7 @@ For every time and place, there is a HERO. In this case, one with a <%= HERO.cha
 
 Introduce supporting character (SUPPORT) <%= ", a villian, " if SUPPORT.villain? %> with a <%= SUPPORT.characteristic %>.
 
-Explain SUPPORT's RELATIONSHIP to HERO.
+SUPPORT has always been a <%= SUPPORT.relationship_to_hero %> to <%= HERO.gendered_possesive_pronoun %>.
 
 Is SUPPORT isn't already the VILLAIN, introduce VILLAIN with RELATIONSHIP(s) to HERO and/or SUPPORT, and CHARACTERISTIC.
 

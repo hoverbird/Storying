@@ -1,6 +1,8 @@
 source "http://rubygems.org"
 
-gem "chance"
-gem "yaml"
-gem "erb"
-gem "sinatra"
+group :default do
+	gem "chance"
+	gem "yaml"
+	gem "erb"
+	gem "sinatra"
+end
