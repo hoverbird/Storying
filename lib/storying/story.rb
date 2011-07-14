@@ -14,11 +14,10 @@ module Storying
     end
 
     def initialize
-      @setting = Story.settings.random
-      @hero = Hero.new(self)
-      @supporting_character = SupportingCharacter.new(self)
+      @setting = Storying.settings.random
+      @hero = Hero.new(:story => self)
+      @supporting_character = SupportingCharacter.new(:story => self)
     end
 
   end
-
 end

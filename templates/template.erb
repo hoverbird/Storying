@@ -4,28 +4,32 @@ Heh heh... I like #3 a lot -- it's like, the most spastic & indecisive publisher
 Okay I am just going to go ahead & try to jam on some pseudo-code right here -- this is going to be really rough/random!
 %>
 
-<% STORY 	 = Storying::Story.new %>
-<% HERO 	 = STORY.hero %>
-<% SETTING = STORY.setting %>
-<% SUPPORT = STORY.supporting_character %>
+<% story 	 = Storying::Story.new %>
+<% hero 	 = story.hero %>
+<% setting = story.setting %>
+<% support = story.supporting_character %>
 
+For every time and place, there is a hero. In this case, one with a <%= hero.characteristic %> who is <%= hero.relationship_to_setting %>.
 
-For every time and place, there is a HERO. In this case, one with a <%= HERO.characteristic %> who is <%= HERO.relationship_to_setting %>.
+Introduce supporting character (support) <%= ", a villain, " if support.villain? %> with a <%= support.characteristic %>.
 
-Introduce supporting character (SUPPORT) <%= ", a villian, " if SUPPORT.villain? %> with a <%= SUPPORT.characteristic %>.
+support has always been a <%= support.relationship_to_hero %> to <%= hero.gendered_personal_pronoun %>.
 
-SUPPORT has always been a <%= SUPPORT.relationship_to_hero %> to <%= HERO.gendered_possesive_pronoun %>.
+<% unless support.villain? %>
+	<% villain = Storying::SupportingCharacter.new(:story => story, :villain => true) %>
 
-Is SUPPORT isn't already the VILLAIN, introduce VILLAIN with RELATIONSHIP(s) to HERO and/or SUPPORT, and CHARACTERISTIC.
+Little does our hero know, <%= hero.gendered_possesive_adjective %> own <%= villain.relationship_to_hero %> who would threaten it all.
 
-Introduce CONFLICT, optionally involving SUPPORT or <%= SETTING %>.
+<% end %>
 
-Repeat N times: Apply TWIST to HERO, SUPPORT, or VILLAIN.
-Each iteration: is CONFLICT a MacGuffin? If so: reveal TRUE CONFLICT. Retroactively inject seed of TRUE CONFLICT into introduction of HERO, SETTING, SUPPORT or VILLAIN.
+Introduce CONFLICT, optionally involving support or <%= setting %>.
 
-Decide whether HERO or VILLAIN is victorious.
+Repeat N times: Apply TWIST to hero, support, or villain.
+Each iteration: is CONFLICT a MacGuffin? If so: reveal TRUE CONFLICT. Retroactively inject seed of TRUE CONFLICT into introduction of hero, setting, support or villain.
 
-Apply CONSEQUENCE for HERO, SUPPORT, VILLAIN and/or <%= SETTING %>.
+Decide whether hero or villain is victorious.
+
+Apply CONSEQUENCE for hero, support, villain and/or <%= setting %>.
 
 <%#
 Hmm feels like there are too many primitive types... maybe it's possible to collapse some of them together?
