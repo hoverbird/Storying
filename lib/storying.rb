@@ -1,4 +1,4 @@
-%w(rubygems chance yaml erb sinatra).each {|library| require library}
+%w(rubygems bundler/setup chance yaml erb sinatra).each {|library| require library}
 
 module Storying
   STORY_ELEMENTS_PATH = File.expand_path(File.dirname(__FILE__) + "/../story_elements")
