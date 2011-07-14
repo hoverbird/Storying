@@ -1,0 +1,26 @@
+<% story 	 = Storying::Story.new %>
+<% hero 	 = story.hero %>
+<% setting = story.setting %>
+<% support = story.supporting_character %>
+
+For every time and place, there is a hero. In this case, one with a <%= hero.characteristic %> who is <%= hero.relationship_to_setting %>.
+
+Introduce supporting character (support) with a <%= support.characteristic %>.
+
+support has always been a <%= support.relationship_to_hero %> to <%= hero.personal_pronoun('object') %>.
+
+<% unless support.villain? %>
+	<% villain = Storying::SupportingCharacter.new(:story => story, :villain => true) %>
+
+Little does our hero know, <%= hero.possesive_pronoun %> own <%= villain.relationship_to_hero %> who would threaten it all.
+
+<% end %>
+
+With the arrival of <%= story.conflict %>, nothing in <%= setting %> will ever be the same.
+
+Repeat N times: Apply TWIST to hero, support, or villain.
+Each iteration: is CONFLICT a MacGuffin? If so: reveal TRUE CONFLICT. Retroactively inject seed of TRUE CONFLICT into introduction of hero, setting, support or villain.
+
+Decide whether hero or villain is victorious.
+
+Apply CONSEQUENCE for hero, support, villain and/or <%= setting %>.

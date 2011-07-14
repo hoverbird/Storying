@@ -1,4 +1,4 @@
-#  all characters have these
+#  shared by all characters
 module Storying
   module CharacterAttributes
     def initialize(options = {})
@@ -11,13 +11,16 @@ module Storying
       @gender ||= ['woman', 'man'].random
     end
 
-    def gendered_possesive_adjective
+    def possesive_pronoun
       gender == 'woman' ? 'her' : 'his'
     end
 
-    def gendered_personal_pronoun
-      # dative case only
-      gender == 'woman' ? 'her' : 'him'
+    def personal_pronoun(type = :subject)
+      if type.to_sym == :object
+        gender == 'woman' ? 'her' : 'him'
+      else
+        gender == 'woman' ? 'she' : 'he'
+      end
     end
 
     def characteristic
@@ -27,5 +30,10 @@ module Storying
     def relationship_to_setting
       @relationship_to_setting ||= [Storying.relationships_to_setting.random, @story.setting].join(' ')
     end
+
+    def name
+      @names ||= Storying.names[gender].random
+    end
+
   end
 end

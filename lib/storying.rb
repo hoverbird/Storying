@@ -2,8 +2,13 @@
 
 module Storying
   STORY_ELEMENTS_PATH = File.expand_path(File.dirname(__FILE__) + "/../story_elements")
-  TEMPLATE_PATH = File.expand_path(File.dirname(__FILE__) + "/../templates")
   LIB_PATH =  File.expand_path(File.dirname(__FILE__) + "/storying/")
+  TEMPLATES = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/../templates/*.erb"))
+
+  configure(:development) do |c|
+    require "sinatra/reloader"
+    c.also_reload LIB_PATH + "/*.rb"
+  end
 
   Dir.entries(LIB_PATH).sort.each do |filename|
     next unless filename =~ /\.rb$/
@@ -22,7 +27,7 @@ module Storying
   end
 
   get '/' do
-    template = ERB.new(File.read(TEMPLATE_PATH + '/template.erb'))
+    template = ERB.new(File.read(TEMPLATES.random))
     template.result
   end
 
