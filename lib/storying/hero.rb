@@ -1,5 +1,5 @@
 module Storying
   class Hero < Character
-    randomize_character_traits :gender, :goal, :job
+    has_randomized_story_element :goal, :job
   end
 end
