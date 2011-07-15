@@ -3,7 +3,12 @@
 module Storying
   STORY_ELEMENTS_PATH = File.expand_path(File.dirname(__FILE__) + "/../story_elements")
   LIB_PATH =  File.expand_path(File.dirname(__FILE__) + "/storying/")
-  TEMPLATES = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/../templates/*.erb"))
+  TEMPLATES = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/../templates/[^layout]*.erb"))
+
+  # set :root, File.expand_path(File.dirname(__FILE__)) + '/app'
+  # set :public, Proc.new { File.expand_path(File.dirname(__FILE__) + '/../public') }
+  # set :views, Proc.new {File.expand_path(File.dirname(__FILE__) + '/../templates') }
+  # set :static, true
 
   configure(:development) do |c|
     require "sinatra/reloader"
