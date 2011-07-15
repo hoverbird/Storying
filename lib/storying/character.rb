@@ -13,11 +13,11 @@ module Storying
     end
 
     def relationship_to_setting
-      @relationship_to_setting ||= [StoryElements.relationships_to_setting.random, @story.setting].join(' ')
+      @relationship_to_setting ||= [Storying.relationships_to_setting.random, @story.setting].join(' ')
     end
 
     def name
-      @names ||= StoryElements.names[gender].random
+      @names ||= Storying.names[gender].random
     end
     alias :to_s :name
 

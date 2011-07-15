@@ -7,7 +7,7 @@ module Storying
     end
 
     def relationship_to_hero
-      @relationship_to_hero ||= StoryElements.relationships_to_character.random
+      @relationship_to_hero ||= Storying.relationships_to_character.random
     end
   end
 end

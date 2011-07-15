@@ -1,5 +1,5 @@
 ROOT = File.dirname(__FILE__)
-LIB_PATH = ROOT + "/lib/storying/"
+LIB_PATH = File.join(ROOT, 'lib', 'storying')
 $:.unshift LIB_PATH
 
 %w(story_elements gender character).each {|library| require library}
@@ -12,7 +12,7 @@ module Storying
   Dir.entries(LIB_PATH).sort.each do |filename|
     require filename if filename =~ /\.rb$/
   end
-
+  include StoryElements
   get '/' do
     random_template = TEMPLATES.random
     begin

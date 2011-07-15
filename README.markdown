@@ -16,7 +16,7 @@ What's the point?
 -------------
 I tried to set this up so it should be as easy to extend as possible.  To this end, there are a few places where you can create entirely new stories and story elements just by tweaking of text here or creating a file there.  A guide to how the project is layed out:
 
-- story_elements: These are lists of text snippets that are read by Storying and made available for random access in your stories. They'll be available based on their filename, so StoryElements.relationships_to_character is a list generated from relationships_to_character.yml.  You can edit these files freely and even add your own new types; just drop a new .yml file in this directory and Storying will pick up on these and make them available to your templates.
+- story_elements: These are lists of text snippets that are read by Storying and made available for random access in your stories. They'll be available based on their filename, so Storying.relationships_to_character is a list generated from relationships_to_character.yml.  You can edit these files freely and even add your own new types; just drop a new .yml file in this directory and Storying will pick up on these and make them available to your templates.
 
 - templates: Simple ERB (embedded Ruby) templates that Storying will pick randomly and render.  Add new templates here and they'll be thrown in the mix.
 
