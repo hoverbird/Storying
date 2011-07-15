@@ -5,9 +5,7 @@ module Storying
   STORY_ELEMENTS_PATH = ROOT + "/story_elements"
   LIB_PATH = ROOT + "/lib/storying/"
   TEMPLATE_PATH = ROOT + "/templates"
-  TEMPLATES = Dir.glob(TEMPLATE_PATH + "/[^layout]*.erb").map {|f| f.split('/')[-1].split('.')[0].to_sym }
-
-  set :views, Proc.new { TEMPLATE_PATH }
+  TEMPLATES = Dir.glob(TEMPLATE_PATH + "/*.erb").map {|f| File.read f}#.map {|f| f.split('/')[-1].split('.')[0].to_sym }
 
   configure(:development) do |config|
     require "sinatra/reloader"
@@ -31,7 +29,7 @@ module Storying
   end
 
   get '/' do
-    erb TEMPLATES.random, :layout => File.read(TEMPLATE_PATH + '/layout.html.erb')
+    erb TEMPLATES.random, :layout => :layout
   end
 
 end
