@@ -1,5 +1,5 @@
 module Storying
-  class Hero
-    include CharacterAttributes
+  class Hero < Character
+    randomize_character_traits :gender, :goal, :job
   end
 end

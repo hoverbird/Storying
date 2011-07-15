@@ -9,8 +9,8 @@ Up and Running
 -------------
 1. git clone the URL above
 2. We're using Bundler to install Chance and the other dependencies. cd to the project directory and run `bundle`. You may need to run `gem install bundler` if you don't already have Bundler installed on your system.
-3. Start the server with "bundle exec ruby lib/storying.rb"
-4. If you see "Sinatra has taken the stage" then visit "http://localhost:4567" in your browser for a tiny generated story.
+3. Start the server with `bundle exec shotgun storying.rb`
+4. If you see "Sinatra has taken the stage" then visit "http://localhost:9393" in your browser for a tiny generated story.
 
 What's the point?
 -------------

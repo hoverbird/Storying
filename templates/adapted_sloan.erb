@@ -3,14 +3,16 @@
 <% setting = story.setting %>
 <% support = story.supporting_character %>
 
-Sometimes there's a <%= hero.gender %> who's perfectly suited for <%= hero.possesive_pronoun %> time and place. For <%= hero.full_name %>, being on top of the world was being a <%= hero.relationship_to_setting %> during the heat wave of <%= (1978..2020).random %>.
-
-<%= support.full_name %>, <%= hero.possesive_pronoun %> <%= support.relationship_to_hero %>, is never far from <%= hero.possesive_pronoun %> side. Ever since that day when <%= hero.name %> noticed <%= support.possesive_pronoun %> <%= support.characteristic %>.
-
+<p>
+Sometimes there's a <%= hero.gender %> who's perfectly suited for <%= hero.possessive_pronoun %> time and place; for <%= hero.full_name %> it was <%= (1978..2020).random %> in <%= story.setting %>, and <%= hero.personal_pronoun %> was on top of the world.
+</p>
+<p>
+<%= hero.possessive_pronoun %> days were spent as a <%= Storying.jobs.random %> and <%= hero.possessive_pronoun %> nights in pursuit of <%= hero.goal %>. <%= support.full_name %>, <%= hero.possessive_pronoun %> <%= support.relationship_to_hero %>, is never far from <%= hero.possessive_pronoun %> side. Ever since that day when <%= hero.name %> noticed <%= support.possessive_pronoun %> <%= support.characteristic %>.
+</p>
+<p>
 <% if support.villain? %>
 But why has <%= support.personal_pronoun %> seemed so distant recently? Could it be the <%= story.conflict %> that threatens them both, or is <%= support.name %> hiding something?
 <% else %><% villain = Storying::SupportingCharacter.new(:story => story, :villain => true) %>
 Neither of them trust <%= villain.full_name %>, <%= hero.name %>'s <%= villain.relationship_to_hero %>- <%= villain.personal_pronoun %> would do anything for <%= Storying.goals.random %>. One thing is clear: when <%= story.conflict %> hits, nothing in <%= setting %> will ever be the same.
 <% end %>
-
-In the end...
+</p>

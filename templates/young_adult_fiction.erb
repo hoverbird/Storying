@@ -1,6 +1,14 @@
-<% story 	 = Storying::Story.new(:gender => 'woman') %>
+<% story 	 = Storying::Story.new %>
 <% hero 	 = story.hero %>
-<% support = story.supporting_character %>
+<% support = story.supporting_character = Storying::SupportingCharacter.new(:gender => hero.opposite_sex) %>
+<% rival = story.villain = Storying::SupportingCharacter.new(:gender => hero.gender, :job => support.job, :story => story) %>
 
-
-<%= hero.full_name %> is a <%= (17..21).random %> year old dance teacher whose main stability through an uncertain childhood was her best friend, Evan Scott, a guitarist with a flair for the business world. Evan's other best friend is Duncan O'Neil, also a guitarist, but with a flair for attracting women's attention while hiding his past. When Duncan moves into Evan's world, he changes the dynamics not only within the band, but within Susie and Evan's relationship. The three friends find themselves struggling with love, loss, and secret passions during the turbulent <%= [70, 80, 90].random %>'s.
+<p>
+  <%= hero.full_name %> is a <%= (17..21).random %> year old <%= hero.job %> whose main stability through an uncertain childhood was <%= hero.possessive_pronoun %> best friend, <%= support.full_name %>, a <%= support.job %> with a <%= support.characteristic %>.
+</p>
+<p>
+  <%= support.name %>'s <em>other</em> best friend is <%= rival.full_name %>, also a <%= rival.job  %>, but with a flair for attracting women's attention while hiding <%= support.possessive_pronoun %> past. When <%= rival %> moves into <%= support %>'s world, <%= rival.personal_pronoun %> changes the dynamics not only within the band, but within <%= hero %> and <%= support %>'s relationship.
+</p>
+<p>
+  The three friends find themselves struggling with love, loss, and secret passions during the turbulent <%= [70, 80, 90].random %>'s.
+</p>

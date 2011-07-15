@@ -1,6 +1,7 @@
 module Storying
   class Story
-    attr_reader :setting, :hero, :supporting_character, :conflict, :villain
+    attr_reader :setting, :hero, :conflict
+    attr_accessor :supporting_character, :villain
 
     def initialize
       @setting = Storying.settings.random

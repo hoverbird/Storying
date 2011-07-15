@@ -23,7 +23,16 @@ module Storying
   end
 
   get '/' do
-    erb TEMPLATES.random, :layout => :layout
+    random_template = TEMPLATES.random
+    begin
+      erb TEMPLATES.random, :layout => :layout
+    rescue => e
+      raise "Error rendering #{random_template}:\n #{e}"
+    end
   end
+
+  # def require_and_include(*libs)
+  #   libs.each {|lib| require File.join(LIB_PATH, filename); include lib.constantize}
+  # end
 
 end

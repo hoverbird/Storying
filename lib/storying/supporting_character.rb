@@ -1,7 +1,7 @@
 module Storying
-  class SupportingCharacter
+  class SupportingCharacter < Character
     include CharacterAttributes
-    attr_writer :villain
+    randomize_character_traits :gender, :goal, :job
 
     def villain?
       @villain ||= 10.percent.chance.happens?

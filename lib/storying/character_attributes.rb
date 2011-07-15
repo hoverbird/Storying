@@ -1,25 +1,16 @@
 #  shared by all characters
 module Storying
   module CharacterAttributes
-    def initialize(options = {})
-      options.each_pair do |key, value|
-        instance_variable_set "@#{key}", value
-      end
-    end
 
-    def gender
-      @gender ||= ['woman', 'man'].random
-    end
-
-    def possesive_pronoun
-      gender == 'woman' ? 'her' : 'his'
+    def possessive_pronoun
+      female?? 'her' : 'his'
     end
 
     def personal_pronoun(type = :subject)
       if type.to_sym == :object
-        gender == 'woman' ? 'her' : 'him'
+        female?? 'her' : 'him'
       else
-        gender == 'woman' ? 'she' : 'he'
+        female?? 'she' : 'he'
       end
     end
 
@@ -34,6 +25,7 @@ module Storying
     def name
       @names ||= Storying.names[gender].random
     end
+    alias :to_s :name
 
     def full_name
       @full_name ||= [name, Storying.last_names.random].join(' ')
