@@ -1,4 +1,4 @@
-%w(rubygems bundler/setup chance yaml erb sinatra thin sinatra/reloader).each {|library| require library}
+%w(rubygems bundler/setup chance yaml erb sinatra thin).each {|library| require library}
 
 module Storying
   ROOT = File.dirname(__FILE__)
@@ -24,12 +24,6 @@ module Storying
 
   get '/' do
     erb TEMPLATES.random, :layout => :layout
-  end
-
-  configure do |c|
-    c.also_reload "*.rb"
-    c.also_reload "*.yml"
-    c.also_reload "*.erb"
   end
 
 end

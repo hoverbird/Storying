@@ -4,5 +4,5 @@ group :default do
 	gem "chance"
 	gem "thin"
 	gem "sinatra"
-	gem "sinatra-reloader"
+	gem "shotgun"
 end
