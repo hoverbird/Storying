@@ -1,18 +1,17 @@
 %w(rubygems bundler/setup chance yaml erb sinatra).each {|library| require library}
 
 module Storying
-  STORY_ELEMENTS_PATH = File.expand_path(File.dirname(__FILE__) + "/../story_elements")
-  LIB_PATH =  File.expand_path(File.dirname(__FILE__) + "/storying/")
-  TEMPLATES = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/../templates/[^layout]*.erb"))
+  ROOT = File.dirname(__FILE__)
+  STORY_ELEMENTS_PATH = ROOT + "/story_elements"
+  LIB_PATH = ROOT + "/lib/storying/"
+  TEMPLATE_PATH = ROOT + "/templates"
+  TEMPLATES = Dir.glob(TEMPLATE_PATH + "/[^layout]*.erb").map {|f| f.split('/')[-1].split('.')[0].to_sym }
 
-  # set :root, File.expand_path(File.dirname(__FILE__)) + '/app'
-  # set :public, Proc.new { File.expand_path(File.dirname(__FILE__) + '/../public') }
-  # set :views, Proc.new {File.expand_path(File.dirname(__FILE__) + '/../templates') }
-  # set :static, true
+  set :views, Proc.new { TEMPLATE_PATH }
 
-  configure(:development) do |c|
+  configure(:development) do |config|
     require "sinatra/reloader"
-    c.also_reload LIB_PATH + "/*.rb"
+    config.also_reload LIB_PATH + "/*.rb"
   end
 
   Dir.entries(LIB_PATH).sort.each do |filename|
@@ -32,8 +31,7 @@ module Storying
   end
 
   get '/' do
-    template = ERB.new(File.read(TEMPLATES.random))
-    template.result
+    erb TEMPLATES.random, :layout => File.read(TEMPLATE_PATH + '/layout.html.erb')
   end
 
 end
