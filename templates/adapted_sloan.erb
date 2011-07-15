@@ -3,27 +3,12 @@
 <% setting = story.setting %>
 <% support = story.supporting_character %>
 
-For every time and place, there is a hero. In this case, one with a <%= hero.characteristic %> who is <%= hero.relationship_to_setting %>.
+Sometimes there's a <%= hero.gender %> who's perfectly suited for <%= hero.possesive_pronoun %> time and place. For <%= hero.full_name %>, being on top of the world was being a <%= hero.relationship_to_setting %> during the heat wave of <%= (1978..2020).random %>.
 
-Introduce supporting character (support) with a <%= support.characteristic %>.
+<%= support.full_name %>, <%= hero.possesive_pronoun %> <%= support.relationship_to_hero %>, is never far from <%= hero.possesive_pronoun %> side. Ever since that day when <%= hero.name %> noticed <%= support.possesive_pronoun %> <%= support.characteristic %>.
 
-support has always been a <%= support.relationship_to_hero %> to <%= hero.personal_pronoun('object') %>.
-
-<% unless support.villain? %>
-<% villain = Storying::SupportingCharacter.new(:story => story, :villain => true) %>
-Little does our hero know, <%= hero.possesive_pronoun %> own <%= villain.relationship_to_hero %> who would threaten it all.
+<% if support.villain? %>
+But why has <%= support.personal_pronoun %> seemed so distant recently? Could it be the <%= story.conflict %> that threatens them both, or is <%= support.name %> hiding something?
+<% else %><% villain = Storying::SupportingCharacter.new(:story => story, :villain => true) %>
+Neither of them trust <%= villain.full_name %>, <%= hero.name %>'s <%= villain.relationship_to_hero %>- <%= villain.personal_pronoun %> would do anything for <%= Storying.goals.random %>. One thing is clear: when <%= story.conflict %> hits, nothing in <%= setting %> will ever be the same.
 <% end %>
-
-When <%= story.conflict %> hits, nothing in <%= setting %> will ever be the same.
-
-<%# 1..3.random.times do %>
-Apply TWIST to hero, support, or villain.
- <%# puts 'twist! ' %>
-<%# end %>
-
-Each iteration: is CONFLICT a MacGuffin? If so: reveal TRUE CONFLICT. Retroactively inject seed of TRUE CONFLICT into introduction of hero, setting, support or villain.
-
-<%# if hero_victorious? = probably %>
-Decide whether hero or villain is victorious.
-
-Apply CONSEQUENCE for hero, support, villain and/or <%= setting %>.

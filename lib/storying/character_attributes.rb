@@ -35,5 +35,9 @@ module Storying
       @names ||= Storying.names[gender].random
     end
 
+    def full_name
+      @full_name ||= [name, Storying.last_names.random].join(' ')
+    end
+
   end
 end
