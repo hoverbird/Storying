@@ -1,11 +1,11 @@
+ROOT = File.dirname(__FILE__)
+LIB_PATH = ROOT + "/lib/storying/"
+$:.unshift LIB_PATH
+
+%w(story_elements gender character).each {|library| require library}
 %w(rubygems bundler/setup chance yaml erb sinatra thin).each {|library| require library}
 
 module Storying
-  ROOT = File.dirname(__FILE__)
-  LIB_PATH = ROOT + "/lib/storying/"
-  $:.unshift LIB_PATH
-  %w(story_elements gender character).each {|library| require library}
-
   TEMPLATE_PATH = ROOT + "/templates"
   TEMPLATES = Dir.glob(TEMPLATE_PATH + "/*.erb").map {|f| File.read f}
 
