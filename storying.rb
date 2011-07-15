@@ -2,13 +2,15 @@
 
 module Storying
   ROOT = File.dirname(__FILE__)
-  STORY_ELEMENTS_PATH = ROOT + "/story_elements"
   LIB_PATH = ROOT + "/lib/storying/"
+  $:.unshift LIB_PATH
+  %w(story_elements gender character).each {|library| require library}
+
   TEMPLATE_PATH = ROOT + "/templates"
   TEMPLATES = Dir.glob(TEMPLATE_PATH + "/*.erb").map {|f| File.read f}
 
   Dir.entries(LIB_PATH).sort.each do |filename|
-    require File.join(LIB_PATH, filename) if filename =~ /\.rb$/
+    require filename if filename =~ /\.rb$/
   end
 
   get '/' do
@@ -19,9 +21,4 @@ module Storying
       raise "Error rendering #{random_template}:\n #{e}"
     end
   end
-
-  # def require_and_include(*libs)
-  #   libs.each {|lib| require File.join(LIB_PATH, filename); include lib.constantize}
-  # end
-
 end

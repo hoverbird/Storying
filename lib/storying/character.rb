@@ -1,7 +1,4 @@
 module Storying
-  require File.join(LIB_PATH, 'story_elements')
-  require File.join(LIB_PATH, 'gender')
-
   class Character
     include StoryElements
     include Gender
