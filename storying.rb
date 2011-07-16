@@ -3,7 +3,7 @@ LIB_PATH = File.join(ROOT, 'lib', 'storying')
 $:.unshift LIB_PATH
 
 %w(story_elements gender character).each {|library| require library}
-%w(rubygems bundler/setup chance yaml erb sinatra thin active_support/inflector).each {|library| require library}
+%w(rubygems bundler/setup chance yaml erb sinatra thin).each {|library| require library}
 Dir.entries(LIB_PATH).sort.each {|filename| require filename if filename =~ /\.rb$/ }
 
 module Storying
