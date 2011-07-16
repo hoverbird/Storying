@@ -2,6 +2,7 @@ module Storying
   class Story
     include StoryElements
     has_randomized_story_element :setting, :conflict
+
     attr_reader :hero
     attr_accessor :supporting_character, :villain
 

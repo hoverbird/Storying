@@ -1,1 +1,15 @@
-In the winter of 1951, a storyteller arrives at the home of nine-year-old Ronan O'Mara in the Irish countryside. The last practitioner of an honored, centuries-old tradition, the Seanchai enthralls his assembled audience for three evenings running with narratives of foolish kings and fabled saints, of enduring accomplishments and selfless acts -- until he is banished from the household for blasphemy and moves on. But these three incomparable nights have changed young Ronan forever, setting him on the course he will follow for years to come -- as he persues the elusive, itinerant story teller ... and the magical tales that are no less than the glorious saga of his tenacious, troubled, and extraordinary isle.
+<% story = Storying::Story.new %>
+
+<p>
+  In the <%= %w(winter autumn summer spring).random %> of <%= (1950..1961).random %>, a <%= story.supporting_character.job %> arrives at the home of eight-year-old <%= story.hero.full_name %> in the <%= Storying.nationalities.random %> countryside. The last practitioner of an dying tradition, <%= story.supporting_character.full_name %> (as the <%= story.supporting_character.job %> is known) regales <%= story.hero.name %> with stories from <%= story.supporting_character.possessive_pronoun %> travels.
+</p>
+<p>
+When <%= story.conflict %> strikes the village, <%= story.supporting_character %> falls under suspicion of local authorities. Young <%= story.hero %> is torn between <%= story.hero.possessive_pronoun %> new friend and <%= story.hero.possessive_pronoun %>  elders. After <%= story.hero %>'s <%= Storying.relationships_to_character.random %> takes <%= story.supporting_character %>'s side, <%= story.hero %> tries to help <%= story.supporting_character.personal_pronoun(:object) %> escape.
+</p>
+<p>
+<% if story.supporting_character.villain? %>
+As a local <%= Storying.jobs.random %> begins looking into the case, <%= story.supporting_character.full_name %>'s story begins to unravel. A convoluted plot to win <%= story.supporting_character.goal %>
+<% else %>
+<%= story.hero %>'s unlikely friendship with the <%= story.supporting_character.job %> becomes a source of strength for years thereafter as <%= story.hero.personal_pronoun %> makes the journey into <%= story.hero.gender %>hood.
+<% end %>
+</p>

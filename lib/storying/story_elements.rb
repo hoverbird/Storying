@@ -1,7 +1,8 @@
 module Storying
   module StoryElements
-    STORY_ELEMENTS_PATH = ROOT + "/story_elements"
+    include ActiveSupport::Inflector
 
+    STORY_ELEMENTS_PATH = ROOT + "/story_elements"
     class << self
       def included(base)
         base.extend(ClassMethods)
@@ -20,15 +21,16 @@ module Storying
 
       # Creates an accessor  returning a randomly selected Story element from the Storying module.
       # i.e. `has_randomized_story_element :name` creates methods equivalent to the following:
-      #  def name
-      #     @name ||= Storying.names.random
-      #  end
+      #
+      # def name
+      #   @name ||= Storying.names.random
+      # end
       def has_randomized_story_element(*properties)
         properties.each do |property|
           define_method property.to_sym do
             unless value = instance_variable_get("@#{property}".to_sym)
               # FIXME poor man's pluralization
-              value = Storying.send("#{property}s").random
+              value = Storying.send(singularize(property.to_s)).random
               instance_variable_set("@#{property}", value)
             end
             value
@@ -36,5 +38,6 @@ module Storying
         end
       end
     end
+
   end
 end
