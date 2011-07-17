@@ -27,5 +27,17 @@ module Storying
       end
     end
 
+    def noun_as_parent
+      female?? 'mother' : 'father'
+    end
+    
+    def noun_as_child
+      female?? 'daughter' : 'son'
+    end
+    
+    def noun_as_sibling
+      female?? 'sister' : 'brother'
+    end
+    
   end
 end
