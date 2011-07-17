@@ -1,7 +1,10 @@
 <% story     = Storying::Story.new %>
 <% hero 	 = story.hero %>
 <% support   = story.supporting_character = Storying::SupportingCharacter.new(:gender => hero.opposite_sex) %>
-<% villain   = story.villain = Storying::SupportingCharacter.new(:gender => hero.gender, :job => support.job, :story => story) %>
+<% villain   = story.villain = Storying::SupportingCharacter.new(:gender => hero.gender, :story => story) %>
+
+<% # oy %>
+<% villain.female?? villain_name = villain.name : villain_name = villain.last_name %>
 
 <% ship = Storying.space_ship_names.random %>
 
@@ -23,8 +26,8 @@
 
 <p>The <em><%= ship %></em> has her target.</p>
 	
-<p>But what Captain <%= hero.name %> doesn't know is that <%= hero.possessive_pronoun %> first officer <%= support.full_name %> is hiding a secret that might end their secret mission before it begins. <%= support.possessive_pronoun.capitalize %> <%= villain.noun_as_parent %>, the dread pirate <%= villain.full_name %>, still holds <%= villain.possessive_pronoun %> <%= support.noun_as_child %> in <%= villain.possessive_pronoun %> thrall&mdash;and <%= villain.last_name %> has plans of <%= villain.possessive_pronoun %> own.</p>
+<p>But what Captain <%= hero.name %> doesn't know is that <%= hero.possessive_pronoun %> first officer <%= support.name %> 22 is hiding a secret that might end their secret mission before it begins. <%= support.possessive_pronoun.capitalize %> <%= villain.noun_as_parent %>, the dread pirate <%= villain_name %>, still holds <%= villain.possessive_pronoun %> <%= support.noun_as_child %> in <%= villain.possessive_pronoun %> thrall&mdash;and <%= villain_name %> has plans of <%= villain.possessive_pronoun %> own.</p>
 
-<p>So when the <em><%= ship %></em>, <%= villain.last_name %>'s black-hulled <%= evil_ship %>, and the planet-sized flagship of the <%= faction %> all meet in deep space, the fate of the universe will hang by a thread. The bond between <%= villain.noun_as_parent %> and <%= support.noun_as_child %> will be tested against the one between captain and crew&mdash;and testing them all will be the bottomless hunger of the <%= faction%>.
+<p>So as the <em><%= ship %></em> races the pirate <%= villain.noun_as_ruler %>'s black-hulled <em><%= evil_ship %></em> towards the <%= faction%> flagship, the fate of the universe hangs by two threads. The bond between <%= villain.noun_as_parent %> and <%= support.noun_as_child %> will be tested against the one between captain and crew&mdash;and testing them all will be the bottomless hunger of the <%= faction%>.
 	
 <p>It's time to fly.</p>

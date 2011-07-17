@@ -39,5 +39,9 @@ module Storying
       female?? 'sister' : 'brother'
     end
     
+    def noun_as_ruler
+      female?? 'queen' : 'king'
+    end
+    
   end
 end
