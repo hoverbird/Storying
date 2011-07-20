@@ -13,8 +13,17 @@ module Storying
       Dir.open(STORY_ELEMENTS_PATH) do |dir|
         dir.each do |filename|
           next unless filename =~ /\.yml$/
-          story_element_kind = filename.gsub('.yml', '').to_sym
-          define_method(story_element_kind) { YAML.load_file(File.join(STORY_ELEMENTS_PATH, filename)) }
+          element_name = filename.gsub('.yml', '').to_sym
+          elements = YAML.load_file(File.join(STORY_ELEMENTS_PATH, filename))
+
+          define_method element_name do
+            unless instance_variable_defined? "@#{element_name}"
+              instance_variable_set "@#{element_name}", elements
+            else
+              instance_variable_get "@#{element_name}"
+            end
+          end
+
         end
       end
 
