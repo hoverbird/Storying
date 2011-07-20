@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 group :default do
-	gem "chance"
+	gem "chance", ">= 0.5.2"
 	gem "thin"
 	gem "sinatra"
 	gem "shotgun"
