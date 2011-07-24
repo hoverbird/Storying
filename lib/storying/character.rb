@@ -25,5 +25,13 @@ module Storying
       @full_name ||= [name, last_name].join(' ')
     end
 
+    def gift_type
+      @gift_type ||= Storying.uncanny_elements.random
+    end
+    
+    def can_handle_element
+      gift_type == @story.magic_element
+    end
+
   end
 end
