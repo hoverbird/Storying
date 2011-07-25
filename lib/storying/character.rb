@@ -13,11 +13,11 @@ module Storying
     end
 
     def relationship_to_setting
-      @relationship_to_setting ||= [Storying.relationships_to_setting.random, @story.setting].join(' ')
+      @relationship_to_setting ||= [relationships_to_setting.random, @story.setting].join(' ')
     end
 
     def name
-      @names ||= Storying.names[gender].random
+      @names ||= names[gender].random
     end
     alias :to_s :name
 
@@ -26,9 +26,9 @@ module Storying
     end
 
     def gift_type
-      @gift_type ||= Storying.uncanny_elements.random
+      @gift_type ||= uncanny_elements.random
     end
-    
+
     def can_handle_element
       gift_type == @story.magic_element
     end

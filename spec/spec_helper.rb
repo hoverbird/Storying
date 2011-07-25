@@ -1,3 +1,3 @@
 require 'bundler'
 require 'rspec'
-require File.join(File.dirname(__FILE__), '..', 'storying')
+require File.join(File.dirname(__FILE__), '..', 'app')

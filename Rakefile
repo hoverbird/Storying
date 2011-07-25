@@ -1,7 +1,6 @@
 require 'rake/testtask'
 require 'rspec/core/rake_task'
 require 'bundler'
-Bundler::GemHelper.install_tasks :name => 'storying'
 
 desc "Run all examples"
 RSpec::Core::RakeTask.new(:lib) do |spec|
@@ -10,3 +9,5 @@ RSpec::Core::RakeTask.new(:lib) do |spec|
   spec.rspec_opts = ["--color", "--format", "documentation"]
   # spec.ruby_opts="-w"
 end
+
+task :default  => :lib

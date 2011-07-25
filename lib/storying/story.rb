@@ -16,8 +16,5 @@ module Storying
       @supporting_character
     end
 
-    def magic_element
-      @magic_element ||= Storying.uncanny_elements.random
-    end
   end
 end
