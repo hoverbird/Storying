@@ -19,29 +19,29 @@ module Storying
       female?? 'her' : 'his'
     end
 
-    def personal_pronoun(type = :subject)
-      if type.to_sym == :object
-        female?? 'her' : 'him'
-      else
-        female?? 'she' : 'he'
-      end
+    def personal_pronoun
+      female?? 'she' : 'he'
+    end
+
+    def personal_pronoun_object
+      female?? 'her' : 'him'
     end
 
     def noun_as_parent
       female?? 'mother' : 'father'
     end
-    
+
     def noun_as_child
       female?? 'daughter' : 'son'
     end
-    
+
     def noun_as_sibling
       female?? 'sister' : 'brother'
     end
-    
+
     def noun_as_ruler
       female?? 'queen' : 'king'
     end
-    
+
   end
 end

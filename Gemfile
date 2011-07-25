@@ -6,6 +6,7 @@ group :default do
 	gem "thin"
 	gem "sinatra"
 	gem "ruby-debug"
+	gem "mustache"
 	gem "shotgun"
 end
 
