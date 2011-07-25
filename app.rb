@@ -21,8 +21,8 @@ class StoryingWebApp < Sinatra::Base
     :namespace => Storying
   }
 
-  get '/hella' do
-    mustache :simple
+  get '/:template' do
+    mustache params[:template]
   end
 
   get '/' do
