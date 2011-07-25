@@ -7,6 +7,5 @@ describe "Storying" do
 
   it "returns the same array on each get" do
     Storying.last_names.object_id.should == Storying.last_names.object_id
-
   end
 end

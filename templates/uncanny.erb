@@ -20,7 +20,7 @@
 <p>
   <%= story.supporting_character.first_name %> arrived first, and came upon the Cave of Unmanageable <%= @story.magic_element %>, which had destroyed many in quite gruesome ways.
 
-   <% if @supporting_character.can_handle_element %> Given <%= story.supporting_character.full_name %> strong mastery of @gift_type, <%= supporting_character.personal_pronoun %> did pass through the Cave, gaining the Cloak of <% Storying.uncanny_elements %> and losing only one limb, that lay at the Cave's entrance unrotting and alerting all others to the great triumph of the day.
+   <% if story.supporting_character.can_handle_element %> Given <%= story.supporting_character.full_name %> strong mastery of @gift_type, <%= supporting_character.personal_pronoun %> did pass through the Cave, gaining the Cloak of <% Storying.uncanny_elements %> and losing only one limb, that lay at the Cave's entrance unrotting and alerting all others to the great triumph of the day.
   <% else %>
 
   Though <%= story.supporting_character.first_name %> was not blessed with master of <% @story.magic_element %>, <%= supporting_character.personal_pronoun %> thought <%= supporting_character.posessive_pronoun %> general abilities sufficient and pushed forward to a quick and gruesome death, <%= supporting_character.posessive_pronoun %> body left at the mouth of the cave as warning.

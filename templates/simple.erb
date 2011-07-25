@@ -1,6 +1,6 @@
-<% story 	 = Storying::Story.new %>
-<% hero 	 = story.hero %>
-<% support = story.supporting_character %>
+<% story = Storying::Story.new %>
+<% hero = story.hero %>
+
 <p>
 A <%= hero.gender %> with a <%= hero.characteristic %>, <%= hero.name %> is an international operative who will stop at nothing to see justice done. Sometimes <%= hero.personal_pronoun %> must journey far in search of evil; sometimes evil finds <%= hero.personal_pronoun('object') %> in <%= story.setting %>.
 </p>
