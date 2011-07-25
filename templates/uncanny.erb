@@ -34,11 +34,11 @@
   <% if @hero.can_handle_element %> With <%= story.supporting_character.full_name %> strong mastery of @gift_type, <%= supporting_character.personal_pronoun %> stepped past the flesh and cleaned the cave of all remaining <% Storying.uncanny_phrase.random_pop%>, winning the favor of the nearby villagers.
   <% else %>
 
-  Though <%= story.supporting_character.first_name %> had not the gift of <% @story.magic_element %>, <%= supporting_character.possessive %> general excellence allowed <%= supporting_character.personal_pronoun %> to reclaim the abandoned flesh of <%= story.supporting_character.first_name %>, the use of which would come back to haunt us all in the next age.
+  Though <%= story.supporting_character.first_name %> had not the gift of <% @story.magic_element %>, <%= story.supporting_character.possessive %> general excellence allowed <%= story.supporting_character.personal_pronoun %> to reclaim the abandoned flesh of <%= story.supporting_character.first_name %>, the use of which would come back to haunt us all in the next age.
   <% end %>
 </p>
 
 <p>
-There's much more to tell of this story, but I do think this brief sketch gives a basic introduction for those interested in understanding the complicated relationship between the <%= story.supporting_character.last_name %> and <%= hero.supporting_character.last_name %> families.
+There's much more to tell of this story, but I do think this brief sketch gives a basic introduction for those interested in understanding the complicated relationship between the <%= story.supporting_character.last_name %> and <%= story.hero.last_name %> families.
 </p>
 
