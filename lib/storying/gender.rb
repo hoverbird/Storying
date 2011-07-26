@@ -1,7 +1,7 @@
 module Storying
   module Gender
     include StoryElements
-    has_randomized_story_element :gender
+    has_random_story_element :gender
 
     def female?
       gender == 'woman'

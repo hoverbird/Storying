@@ -10,23 +10,29 @@ module Storying
 
     module ClassMethods
       # Creates an accessor  returning a randomly selected Story element from the Storying module.
-      # i.e. `has_randomized_story_element :name` creates methods equivalent to the following:
+      # i.e. `has_random_story_element :name` creates methods equivalent to the following:
       #
       # def name
       #   @name ||= names.random
       # end
-      def has_randomized_story_element(*properties)
+      def has_random_story_element(*properties)
+        options = properties.extract_options!
+        puts options.inspect
         properties.each do |property|
           define_method property.to_sym do
             unless value = instance_variable_get("@#{property}".to_sym)
-              # FIXME poor man's pluralization
-              value = send("#{property}s").random
+              collection = send("#{property}s") # FIXME poor man's pluralization
+              if options[:unique]
+                value = collection.random_pop
+              else
+                value = collection.random
+              end
               instance_variable_set("@#{property}", value)
             end
             value
           end
         end
-      end
+      end      
     end
 
     # Parse all of the story_elements YAML files and make accessor methods by filename

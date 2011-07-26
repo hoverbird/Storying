@@ -1,9 +1,10 @@
+require 'bundler/setup'
 ROOT = File.dirname(__FILE__)
 LIB_PATH = File.join(ROOT, 'lib', 'storying')
 $:.unshift LIB_PATH
 
-%w(rubygems chance story_elements gender character storying ).each {|library| require library}
-%w(bundler/setup yaml erb mustache/sinatra sinatra/base story_view thin).each {|library| require library}
+%w(chance core_ext story_elements gender character storying).each {|library| require library}
+%w(yaml erb mustache/sinatra sinatra/base story_view thin).each {|library| require library}
 Dir.entries(LIB_PATH).sort.each {|filename| require filename if filename =~ /\.rb$/ }
 
 class StoryingWebApp < Sinatra::Base
@@ -34,6 +35,5 @@ class StoryingWebApp < Sinatra::Base
     end
   end
 
-  # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $0 # start the server if ruby file executed directly
 end

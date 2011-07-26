@@ -2,8 +2,7 @@ module Storying
   class Character
     include StoryElements
     include Gender
-
-    has_randomized_story_element :characteristic, :last_name
+    has_random_story_element :characteristic, :last_name, {:unique => true}
 
     def initialize(options = {})
       # raise "You can't have a Character without a Story!" unless options[:story]

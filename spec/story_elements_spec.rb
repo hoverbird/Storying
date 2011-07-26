@@ -1,22 +1,54 @@
 require 'spec_helper'
 
 describe "Story Elements inclusion" do
-  class TestClass
+  shared_examples_for "having a random story element" do
+    it "once set, is always the same" do
+      subject.instance_variable_get(:@last_name).should == nil
+      subject.last_name.should == subject.last_name
+      subject.instance_variable_get(:@last_name).should == subject.last_name
+    end
+  end
+  
+  class TestAllElements
     include Storying::StoryElements
-
-    has_randomized_story_element :characteristic, :last_name
+  end
+  before { @total_last_names = subject.last_names.size }
+  subject { TestAllElements.new }
+  specify { subject.characteristics.should be_kind_of Array }
+  
+  it "should return the same array on each get" do
+    subject.last_names.object_id.should == subject.last_names.object_id
   end
 
-  let(:test_object) {TestClass.new}
-
-  specify {test_object.characteristic.should be_kind_of String}
-  specify {test_object.characteristics.should be_kind_of Array}
-
-  it "should pop from the collection by default" do
-    original_size = test_object.characteristics.size
-    puts test_object.characteristics
-    test_object.characteristic
-    test_object.characteristic.size.should == original_size - 1
+  context "non-unique elements" do
+    class TestRandomElements < TestAllElements        
+      has_random_story_element :last_name
+    end
+    
+    subject { TestRandomElements.new }
+    
+    it "should return random element from collection without altering it" do
+      subject.last_names.size.should == @total_last_names
+      subject.last_name.should be_kind_of String
+    end
+    
+    it_should_behave_like "having a random story element"
   end
+
+  context "unique elements" do
+    class TestUniqueRandomElements < TestAllElements        
+      has_random_story_element :last_name, :unique => true
+    end
+    
+    subject { TestUniqueRandomElements.new }
+
+    it "should pop from the collection when unique is true" do
+      subject.last_names.size.should == @total_last_names - 1
+      subject.last_name.should be_kind_of String
+    end
+    
+    it_should_behave_like "having a random story element"
+  end
+  
 
 end

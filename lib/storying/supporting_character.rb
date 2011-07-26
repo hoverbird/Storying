@@ -1,6 +1,6 @@
 module Storying
   class SupportingCharacter < Character
-    has_randomized_story_element :job, :goal
+    has_random_story_element :job, :goal
 
     def villain?
       @villain ||= 10.percent.chance.happens?
