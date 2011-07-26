@@ -17,16 +17,11 @@ module Storying
       # end
       def has_random_story_element(*properties)
         options = properties.extract_options!
-        puts options.inspect
         properties.each do |property|
           define_method property.to_sym do
             unless value = instance_variable_get("@#{property}".to_sym)
               collection = send("#{property}s") # FIXME poor man's pluralization
-              if options[:unique]
-                value = collection.random_pop
-              else
-                value = collection.random
-              end
+              value = options[:unique] ? collection.random_pop : collection.random
               instance_variable_set("@#{property}", value)
             end
             value
