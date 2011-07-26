@@ -18,9 +18,7 @@ describe "Story Elements inclusion" do
   before { @total_last_names = subject.last_names.size }
   
   specify { subject.characteristics.should be_kind_of Array }
-  
-  specify { subject.should_not respond_to(:characteristic) }
-  
+    
   it "should return the same array on each get" do
     subject.last_names.object_id.should == subject.last_names.object_id
   end
@@ -30,6 +28,11 @@ describe "Story Elements inclusion" do
       subject.instance_variable_get(:@last_name).should == nil
       subject.last_name.should == subject.last_name
       subject.instance_variable_get(:@last_name).should == subject.last_name
+    end
+  
+    it "has no element accessors that are undeclared" do
+      subject.should respond_to(:last_name)
+      subject.should_not respond_to(:characteristic)
     end
   end
 
