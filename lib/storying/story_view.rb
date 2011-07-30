@@ -1,8 +1,11 @@
 module Storying
   module Views
     class StoryView < Mustache
+      include StoryElements
+      
       STORY_ELEMENTS_PATH = ROOT + "/story_elements"
-
+      self.raise_on_context_miss = true
+      
       Dir.open(STORY_ELEMENTS_PATH) do |dir|
         dir.each do |filename|
           next unless filename =~ /\.yml$/
@@ -30,6 +33,10 @@ module Storying
         story.supporting_character
       end
 
+      def villain
+        story.villain
+      end
+      
     end
   end
 end

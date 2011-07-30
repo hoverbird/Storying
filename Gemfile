@@ -1,8 +1,8 @@
 source "http://rubygems.org"
 
 group :default do
+  gem "chance", ">= 0.5.2"
   gem "rake"
-	gem "chance", ">= 0.5.2"
 	gem "thin"
 	gem "sinatra"
 	gem "ruby-debug"

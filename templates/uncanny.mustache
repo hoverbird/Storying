@@ -3,39 +3,40 @@
 </p>
 
 <p>
-  It concerns two: {{ support.full_name }}, by age ?? began having regular dreams of {{ uncanny_skills }} and by early adulthood was, in secret and on regular, practicing intermediate management of {{ support.gift_type }}. {{ support.possessive_pronoun }} parents had no abilities, and uncanniologists have been unable to confirm any particular talents within two branches of the <%= story.support.last_name %> line.
+  It concerns two: {{ support.full_name }}, by age ?? began having regular dreams of {{ uncanny_skills }} and by early adulthood was, in secret and on regular, practicing intermediate management of {{ support.gift_type }}. {{ support.possessive_pronoun }} parents had no abilities, and uncanniologists have been unable to confirm any particular talents within two branches of the {{ story.support.last_name }} line.
 </p>
 
 <p>
-  The second is {{ hero.full_name }}, who would become first order of {{ hero.gift_type }} at age <%(22..32).random%>. As is widely known, {{ hero.first_name }}, perceived no great talent until a near-drowning at age <%(15..20)%>, and within 6 months had, without formal training or learning, fully mastered skills of {{ uncanny_skills }} and {{ uncanny_skills }} . (And yet, may we not describe the early life of {{ hero.first_name }} as one almost comically devoted to the avoidance of just those situations that often force these abilities to the future)?
+  The second is {{ hero.full_name }}, who would become first order of {{ hero.gift_type }} at age {{ age }}. As is widely known, {{ hero.first_name }}, perceived no great talent until a near-drowning at age {{ teen_age }}, and within 6 months had, without formal training or learning, fully mastered skills of {{ uncanny_skills }} and {{ uncanny_skills }} . (And yet, may we not describe the early life of {{ hero.first_name }} as one almost comically devoted to the avoidance of just those situations that often force these abilities to the future)?
 </p>
 
 <p>
-   Through various circumstances (additional background can be found in the early issues of {{ uncanny_phrase.random_pop }}) Monthly), {{ support.first_name }} quickly become the primary {{ relationships_to_character }} to <%= story.hero.first_name %>, and both gained general infamy in the summer regions. Unbeknownst to the other, both decided privately to seek the glory promised in the first Scroll of the <% Storying.uncanny_phrase.random_pop%>, and followed the solstice map they arrived, within hours of each other, at a now-well-known <%= Storying.settings.random %>.
+   Through various circumstances (additional background can be found in the early issues of {{ uncanny_phrase.random_pop }}) Monthly), {{ support.first_name }} quickly become the primary {{ relationships_to_character }} to <%= story.hero.first_name %>, and both gained general infamy in the summer regions. Unbeknownst to the other, both decided privately to seek the glory promised in the first Scroll of the {{ uncanny_phrase }}, and followed the solstice map they arrived, within hours of each other, at a now-well-known {{ story.setting }}.
 </p>
 
 <p>
-  {{ support.first_name }} arrived first, and came upon the Cave of Unmanageable <%= @story.magic_element %>, which had destroyed many in quite gruesome ways.
+  {{ support.first_name }} arrived first, and came upon the Cave of Unmanageable {{ story.magic_element }}, which had destroyed many in quite gruesome ways.
 
-   <% if story.support.can_handle_element %> Given {{ support.full_name }} strong mastery of @gift_type, <%= support.personal_pronoun %> did pass through the Cave, gaining the Cloak of <% Storying.uncanny_elements %> and losing only one limb, that lay at the Cave's entrance unrotting and alerting all others to the great triumph of the day.
-  <% else %>
-
-  Though {{ support.first_name }} was not blessed with master of <% @story.magic_element %>, <%= support.personal_pronoun %> thought <%= support.posessive_pronoun %> general abilities sufficient and pushed forward to a quick and gruesome death, <%= support.posessive_pronoun %> body left at the mouth of the cave as warning.
-
-  <% end %>
+{{# story.support.can_handle_element }}
+Given {{ support.full_name }} strong mastery of @gift_type, {{ support.personal_pronoun }} did pass through the Cave, gaining the Cloak of {{ uncanny_elements.random_pop }} and losing only one limb, that lay at the Cave's entrance unrotting and alerting all others to the great triumph of the day.
+{{/ story.support.can_handle_element }}
+{{^ story.support.can_handle_element }}
+  Though {{ support.first_name }} was not blessed with master of {{ story.magic_element }}, {{ support.personal_pronoun }} thought {{ support.posessive_pronoun }} general abilities sufficient and pushed forward to a quick and gruesome death, {{ support.posessive_pronoun }} body left at the mouth of the cave as warning.
+{{/ story.support.can_handle_element }}
 </p>
 
 <p>
-  When <%= story.hero.first_name %> came upon the scene, it is said <%= hero.personal_pronoun %> wept for two hours, and bottled the tears to later make the Elixir of <% Storying.uncanny_phrase.random_pop%> that features so prominently in <%story.full_name%>'s best-selling  <% Storying.uncanny_phrase.random_pop%>: An Observers Tale.
+  When {{ story.hero.first_name }} came upon the scene, it is said {{ hero.personal_pronoun }} wept for two hours, and bottled the tears to later make the Elixir of {{ uncanny_phrase.random_pop }} that features so prominently in {{ story.full_name }}'s best-selling {{ uncanny_phrase.random_pop }}: An Observers Tale.
 
-  <% if @hero.can_handle_element %> With  {{ support.full_name }}'s strong mastery of @gift_type, {{ support.personal.pronoun}} stepped past the flesh and cleaned the cave of all remaining <% Storying.uncanny_phrase.random_pop%>, winning the favor of the nearby villagers.
-  <% else %>
+{{# story.support.can_handle_element }}
+With  {{ support.full_name }}'s strong mastery of @gift_type, {{ support.personal.pronoun}} stepped past the flesh and cleaned the cave of all remaining {{ uncanny_phrases.random_pop }}, winning the favor of the nearby villagers.
+{{/ story.support.can_handle_element }}
+{{^ story.support.can_handle_element }}
 
-  Though {{ support.first_name }} had not the gift of <% @story.magic_element %>, {{ support.possessive_pronoun }} general excellence allowed {{ support.personal_pronoun }} to reclaim the abandoned flesh of {{ support.first_name }} , the use of which would come back to haunt us all in the next age.
-  <% end %>
+  Though {{ support.first_name }} had not the gift of {{ story.magic_element }}, {{ support.possessive_pronoun }} general excellence allowed {{ support.personal_pronoun }} to reclaim the abandoned flesh of {{ support.first_name }} , the use of which would come back to haunt us all in the next age.
+  {{/ story.support.can_handle_element }}
 </p>
 
 <p>
 There's much more to tell of this story, but I do think this brief sketch gives a basic introduction for those interested in understanding the complicated relationship between the {{ support.last_name }} and {{ hero.last_name }} families.
 </p>
-
