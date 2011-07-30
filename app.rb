@@ -3,7 +3,7 @@ ROOT = File.dirname(__FILE__)
 LIB_PATH = File.join(ROOT, 'lib', 'storying')
 $:.unshift LIB_PATH
 
-%w(chance core_ext story_elements gender character storying).each {|library| require library}
+%w(chance core_ext delegation story_elements gender character storying).each {|library| require library}
 %w(yaml erb mustache/sinatra sinatra/base story_view thin).each {|library| require library}
 Dir.entries(LIB_PATH).sort.each {|filename| require filename if filename =~ /\.rb$/ }
 
@@ -11,14 +11,15 @@ class StoryingWebApp < Sinatra::Base
   register Mustache::Sinatra
 
   TEMPLATE_PATH = ROOT + "/templates"
-  VIEW_PATH = ROOT + "/views"
 
-  TEMPLATES = Dir.glob(TEMPLATE_PATH + "/*.erb").map {|f| File.read f}
-  Dir.glob(VIEW_PATH + "/*.rb").each {|filename| require filename }
-
+  TEMPLATES = Dir.glob(TEMPLATE_PATH + "/*.mustache").map do |file|
+    next if file.match /layout.mustache$/
+    file.split('/').last.split('.').first
+  end.compact
+  
   set :mustache, {
     :templates => TEMPLATE_PATH,
-    :views => VIEW_PATH,
+    :views =>  ROOT + "/views",
     :namespace => Storying
   }
 
@@ -27,10 +28,11 @@ class StoryingWebApp < Sinatra::Base
   end
 
   get '/' do
+    # raise TEMPLATES.inspect
     random_template = TEMPLATES.random
     begin
-      erb TEMPLATES.random, :layout => :layout
-    # rescue => e
+      mustache random_template
+          # rescue => e
     #   raise "Error rendering #{random_template}:\n #{e}"
     end
   end

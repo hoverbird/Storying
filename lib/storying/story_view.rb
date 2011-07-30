@@ -1,11 +1,12 @@
 module Storying
   module Views
     class StoryView < Mustache
+      include Delegation
       include StoryElements
       
       STORY_ELEMENTS_PATH = ROOT + "/story_elements"
       self.raise_on_context_miss = true
-      
+
       Dir.open(STORY_ELEMENTS_PATH) do |dir|
         dir.each do |filename|
           next unless filename =~ /\.yml$/
@@ -25,17 +26,7 @@ module Storying
         @story ||= Storying::Story.new
       end
 
-      def hero
-        story.hero
-      end
-
-      def support
-        story.supporting_character
-      end
-
-      def villain
-        story.villain
-      end
+      delegate :hero, :villain, :support, :to => :story
       
     end
   end
