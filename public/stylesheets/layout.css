@@ -24,7 +24,7 @@ hr.invisible {
 
 /* #Page Styles
 ================================================== */
-.inserted { color: red;}
+.inserted.highlighted { color: blue;}
 
 /* #Media Queries
 ================================================== */

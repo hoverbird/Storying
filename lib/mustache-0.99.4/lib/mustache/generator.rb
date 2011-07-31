@@ -156,13 +156,14 @@ class Mustache
 
     # An escaped tag.
     def on_etag(name)
-      ev(<<-compiled)
+      res = ev(<<-compiled)
         v = #{compile!(name)}
         if v.is_a?(Proc)
           v = Mustache::Template.new(v.call.to_s).render(ctx.dup)
         end
         ctx.escapeHTML(v.to_s)
       compiled
+      "<span class='inserted'>" + res + "</span>"
     end
 
     def on_fetch(names)

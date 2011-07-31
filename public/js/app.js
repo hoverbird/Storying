@@ -1,9 +1,11 @@
 (function() {
   $(document).ready(function() {
     var story_dropdown, tabs;
-    $('.content span.inserted').first().removeClass('inserted');
     tabs = $('ul.tabs') || [];
     story_dropdown = $('select#story_template');
+    $('.insertion_highlighter').click(function() {
+      return $('span.inserted').toggleClass('highlighted');
+    });
     story_dropdown.val(window.location.pathname.substr(1));
     return story_dropdown.change(function(element) {
       return window.location = $(element.srcElement).val();

@@ -5,11 +5,17 @@ group :default do
   gem "rake"
 	gem "thin"
 	gem "sinatra"
-	gem "ruby-debug"
-	gem "mustache"
+  # gem "mustache"
 	gem "shotgun"
 end
 
 group :spec do
   gem "rspec"
+end
+
+group :dev do
+  gem "growl"
+  gem "ruby-debug"
+  gem "guard"
+  gem "guard-coffeescript"
 end

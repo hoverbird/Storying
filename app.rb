@@ -1,12 +1,12 @@
 require 'bundler/setup'
 ROOT = File.dirname(__FILE__)
 LIB_PATH = File.join(ROOT, 'lib', 'storying')
-MUSTACHE_PATH = File.join(ROOT, 'lib', 'mustache-0.99.4')
+MUSTACHE_PATH = File.join(ROOT, 'lib', 'mustache-0.99.4', 'lib')
 
 $:.unshift LIB_PATH
 $:.unshift MUSTACHE_PATH
 
-%w(chance core_ext delegation story_elements uncanny_gift gender character storying mustache).each {|library| require library}
+%w(chance core_ext delegation mustache story_elements uncanny_gift gender character storying).each {|library| require library}
 %w(yaml mustache/sinatra sinatra/base story_view thin).each {|library| require library}
 Dir.entries(LIB_PATH).sort.each {|filename| require filename if filename =~ /\.rb$/ }
 
