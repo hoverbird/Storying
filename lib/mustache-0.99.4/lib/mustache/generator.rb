@@ -163,7 +163,7 @@ class Mustache
         end
         ctx.escapeHTML(v.to_s)
       compiled
-      "<span class=inserted'>#{c}</span>"
+      "<span class='inserted'>#{c}</span>"
     end
 
     def on_fetch(names)

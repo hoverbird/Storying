@@ -5,7 +5,6 @@ group :default do
   gem "rake"
 	gem "thin"
 	gem "sinatra"
-  # gem "mustache"
 	gem "shotgun"
 end
 
