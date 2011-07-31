@@ -35,14 +35,13 @@
 <body>
 
 	<div class="container">
-		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Storying</h1>
-			{{>app/story_selector}}
-			</select>
-			<hr />
-		</div>
-		<div class="one-third column">
-			<div>{{{yield}}}</div>
+	  <div class="five columns sidebar">
+	    <h1>Storying</h1>
+	    {{>app/story_selector}}
+	  </div>
+		<div class="eight columns content">
+		  <hr class="invisible">
+		  <div>{{{yield}}}</div>
 		</div>
 	</div>
 
