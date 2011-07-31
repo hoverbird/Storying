@@ -6,7 +6,10 @@
 # 5/20/2011
 
 $(document).ready ->
-  tabs = $('ul.tabs')
+  # pretty lame hack
+  $('.content span.inserted').first().removeClass('inserted')
+
+  tabs = $('ul.tabs') || []
   story_dropdown = $('select#story_template')
 
   story_dropdown.val(window.location.pathname.substr(1)) # set dropdown to current path
@@ -14,7 +17,6 @@ $(document).ready ->
     window.location = $(element.srcElement).val()
 
   # Tabs Activation
-
 	tabs.each (i) ->
     # Get all tabs
 		tab = $(this).find('> li > a')

@@ -3,8 +3,19 @@ module Storying
     class Uncanny < StoryView
       include StoryElements
 
-      has_random_story_element :uncanny_element
-      has_random_story_element :uncanny_phrase, :uncanny_skill, :unique => true
+      has_random_story_element :uncanny_skill, :unique => true
+
+      def uncanny_element
+        @story.uncanny_element ||= uncanny_elements.random
+      end
+
+      def hero_gift_type
+        @gift_type ||= uncanny_elements.random
+      end
+
+      def support_gift_type
+        @gift_type ||= uncanny_elements.random
+      end
 
       def uncanny_philosophy
         @uncanny_philosophy ||= uncanny_philosophies.random_pop
@@ -16,14 +27,6 @@ module Storying
 
       def teen_age
         (15..20).random
-      end
-
-      def gift_type
-        @gift_type ||= uncanny_elements.random
-      end
-
-      def can_handle_element
-        gift_type == uncanny_element
       end
 
     end

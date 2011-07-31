@@ -2,6 +2,8 @@ module Storying
   class Character
     include StoryElements
     include Gender
+    include UncannyGift
+
     has_random_story_element :characteristic, :last_name, {:unique => true}
 
     def initialize(options = {})
@@ -19,6 +21,7 @@ module Storying
       @names ||= names[gender].random
     end
     alias :to_s :name
+    alias :first_name :name
 
     def full_name
       @full_name ||= [name, last_name].join(' ')

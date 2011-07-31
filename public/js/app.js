@@ -1,7 +1,8 @@
 (function() {
   $(document).ready(function() {
     var story_dropdown, tabs;
-    tabs = $('ul.tabs');
+    $('.content span.inserted').first().removeClass('inserted');
+    tabs = $('ul.tabs') || [];
     story_dropdown = $('select#story_template');
     story_dropdown.val(window.location.pathname.substr(1));
     return story_dropdown.change(function(element) {
