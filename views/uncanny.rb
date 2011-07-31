@@ -9,6 +9,14 @@ module Storying
         @story.uncanny_element ||= uncanny_elements.random
       end
 
+      def success_case
+        uncanny_challenges[uncanny_element]['success'].random_pop
+      end
+
+      def failure_case
+        uncanny_challenges[uncanny_element]['failure'].random_pop
+      end
+
       def hero_gift_type
         @gift_type ||= uncanny_elements.random
       end

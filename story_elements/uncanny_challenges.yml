@@ -1,0 +1,37 @@
+---
+Lightness:
+  success:
+    - LASER EYES
+    - STRIKE N E WHERE MATCHES
+  failure:
+    - eternal darkness
+    - blinded
+Nature:
+  success:
+    - animal friends
+    - king of the snakes
+  failure:
+    - cat-scratch fever
+    - eaten by a bear
+Knowledge:
+  success:
+    - smarty-pants-hat
+    - cocktail-talk expertise
+  failure:
+    - a bad reputation
+    - a stern rebuke by the Huffington Post
+Time:
+  success:
+    - the ability to freeze time
+    - a giant gold clock on a chain
+    - a retirement watch
+  failure:
+    - the curse of always JUST missing the bus
+    - constant watch checking inclination
+Memory:
+  success:
+    - the dream recall cloak
+    - an external hard drive
+  failure:
+    - the curse of repeated mistakes
+    - alzheimers syndrome
