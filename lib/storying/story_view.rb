@@ -3,7 +3,18 @@ module Storying
     class StoryView < Mustache
       include Delegation
       include StoryElements
-      
+
+      def story
+        @story ||= Storying::Story.new
+      end
+
+      def templates
+        StoryingWebApp::TEMPLATES
+        [1,2,3]
+      end
+
+      delegate :hero, :villain, :support, :to => :story
+
       STORY_ELEMENTS_PATH = ROOT + "/story_elements"
       self.raise_on_context_miss = true
 
@@ -22,12 +33,6 @@ module Storying
         end
       end
 
-      def story
-        @story ||= Storying::Story.new
-      end
-
-      delegate :hero, :villain, :support, :to => :story
-      
     end
   end
 end
