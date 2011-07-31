@@ -9,11 +9,11 @@ module Storying
       def uncanny_philosophy
         @uncanny_philosophy ||= uncanny_philosophies.random_pop
       end
-      
+
       def age
         (22..32).random
       end
-      
+
       def teen_age
         (15..20).random
       end
@@ -21,12 +21,11 @@ module Storying
       def gift_type
         @gift_type ||= uncanny_elements.random
       end
-      
+
       def can_handle_element
         gift_type == uncanny_element
       end
-      
-      
+
     end
   end
 end

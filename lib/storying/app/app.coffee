@@ -6,9 +6,14 @@
 # 5/20/2011
 
 $(document).ready ->
+  tabs = $('ul.tabs')
+  story_dropdown = $('select#story_template')
 
-  # Tabs Activiation
-	tabs = $('ul.tabs')
+  story_dropdown.val(window.location.pathname.substr(1)) # set dropdown to current path
+  story_dropdown.change (element) ->
+    window.location = $(element.srcElement).val()
+
+  # Tabs Activation
 
 	tabs.each (i) ->
     # Get all tabs
