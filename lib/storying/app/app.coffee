@@ -6,13 +6,16 @@
 # 5/20/2011
 
 $(document).ready ->
-  # pretty lame hack
-  $('.content span.inserted').first().removeClass('inserted')
-
   tabs = $('ul.tabs') || []
   story_dropdown = $('select#story_template')
 
-  story_dropdown.val(window.location.pathname.substr(1)) # set dropdown to current path
+  $('.insertion_highlighter').click ->
+    $('span.inserted').toggleClass('highlighted')
+
+  # set dropdown to current path
+  story_dropdown.val(window.location.pathname.substr(1))
+  
+  # Change paths on dropdown change
   story_dropdown.change (element) ->
     window.location = $(element.srcElement).val()
 
@@ -26,7 +29,7 @@ $(document).ready ->
 
       # Let go if not a hashed one
 			if contentLocation.charAt(0) == "#"
-				e.preventDefault();
+				e.preventDefault()
 
         # Make Tab Active
 				tab.removeClass('active')
