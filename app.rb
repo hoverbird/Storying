@@ -4,7 +4,7 @@ LIB_PATH = File.join(ROOT, 'lib', 'storying')
 $:.unshift LIB_PATH
 
 %w(chance core_ext delegation story_elements gender character storying).each {|library| require library}
-%w(yaml erb mustache/sinatra sinatra/base story_view thin).each {|library| require library}
+%w(yaml mustache/sinatra sinatra/base story_view thin).each {|library| require library}
 Dir.entries(LIB_PATH).sort.each {|filename| require filename if filename =~ /\.rb$/ }
 
 class StoryingWebApp < Sinatra::Base
