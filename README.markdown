@@ -8,9 +8,9 @@ Storying is a lil' app for generating tons of pretty dubious fiction by combinin
 Up and Running
 -------------
 1. git clone the URL above
-2. We're using Bundler to install Chance and the other dependencies. cd to the project directory and run `bundle`. You may need to run `gem install bundler` if you don't already have Bundler installed on your system.
-3. Start the server with `bundle exec shotgun config.ru`
-4. If you see "Sinatra has taken the stage" then visit "http://localhost:9393" in your browser for a tiny generated story.
+2. We're using Bundler to install Chance and the other dependencies. cd to the project directory and run `bundle update`. You may need to run `gem install bundler` if you don't already have Bundler installed on your system.
+3. Start the server with `rake storying`
+4. Visit http://localhost:9393 in your browser for a tiny generated story.
 
 What's the point?
 -------------
