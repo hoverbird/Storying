@@ -5,14 +5,14 @@ Lightness:
     - STRIKE N E WHERE MATCHES
   failure:
     - eternal darkness
-    - blinded
+    - poor night vision
 Nature:
   success:
     - animal friends
     - king of the snakes
   failure:
     - cat-scratch fever
-    - eaten by a bear
+    - being eaten by a bear
 Knowledge:
   success:
     - smarty-pants-hat
