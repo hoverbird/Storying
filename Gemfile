@@ -15,7 +15,7 @@ end
 
 group :dev do
   gem "growl"
-  gem "ruby-debug"
+  # gem "ruby-debug"
   gem "guard"
   gem "guard-coffeescript"
 end

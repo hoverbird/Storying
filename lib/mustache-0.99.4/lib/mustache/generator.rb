@@ -97,7 +97,7 @@ class Mustache
 
       # Compile the Ruby for this section now that we know what's
       # inside the section.
-      ev(<<-compiled)
+      c = ev(<<-compiled)
       if v = #{compile!(name)}
         if v == true
           #{code}
@@ -117,6 +117,7 @@ class Mustache
         end
       end
       compiled
+      "<span class='section'>#{c}</span>"
     end
 
     # Fired when we find an inverted section. Just like `on_section`,
