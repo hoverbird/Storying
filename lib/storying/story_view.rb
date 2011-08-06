@@ -10,7 +10,6 @@ module Storying
 
       def templates
         StoryingWebApp::TEMPLATES
-        [1,2,3]
       end
 
       delegate :hero, :villain, :support, :to => :story

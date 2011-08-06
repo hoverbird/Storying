@@ -27,6 +27,12 @@ hr.invisible {
 ================================================== */
 .inserted.highlighted { color: #ff69b4;}
 
+#notepad {
+  margin: 0 auto;
+  height: 400px;
+  width: 200px;
+}
+
 /* #Media Queries
 ================================================== */
 

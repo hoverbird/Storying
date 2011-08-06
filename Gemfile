@@ -6,6 +6,7 @@ group :default do
 	gem "thin"
 	gem "sinatra"
 	gem "shotgun"
+	gem "heroku"
 end
 
 group :spec do
