@@ -1,5 +1,4 @@
 .DS_STORE
-Gemfile.lock
 .bundle/
 .bundle/config
 .bundle/*
