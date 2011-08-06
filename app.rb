@@ -13,8 +13,9 @@ Dir.entries(LIB_PATH).sort.each {|filename| require filename if filename =~ /\.r
 
 class StoryingWebApp < Sinatra::Base
   register Mustache::Sinatra
+  set :root, ROOT
 
-  TEMPLATE_PATH = ROOT + "/templates"
+  TEMPLATE_PATH = root + "/templates"
   TEMPLATES = Dir.glob(TEMPLATE_PATH + "/*.mustache").map do |file|
     next if file.match /layout.mustache$/
     file.split('/').last.split('.').first
@@ -25,6 +26,7 @@ class StoryingWebApp < Sinatra::Base
     :views =>  ROOT + "/views",
     :namespace => Storying
   }
+
 
   get '/' do
     redirect 'random'
