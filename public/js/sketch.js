@@ -23,8 +23,8 @@
   Raphael.fn.randomCircle = function() {
     var radius, x, y;
     radius = random(20);
-    x = random(paper.width - radius);
-    y = random(paper.height + radius);
+    x = random(paper.width / 2 - radius);
+    y = random(paper.height / 2 + radius);
     return paper.circle(x, y, radius).attr({
       fill: paper.randomColor()
     });

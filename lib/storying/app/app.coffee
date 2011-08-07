@@ -6,22 +6,7 @@
 # 5/20/2011
 
 $(document).ready ->
-  tabs = $('ul.tabs') || []
-  story_dropdown = $('select#story_template')
   template_name = window.location.pathname.substr(1)
+  story_dropdown = $('select#story_template')
   story_dropdown.val(template_name) # set dropdown to current path
-
-  # event handlers
-  $('.insertion_highlighter').click ->
-    $('.inserted').toggleClass('highlighted')
-
-  $('.refresher').click ->
-    console.log('yeah!')
-    window.location.reload(true)
-
-
-
-  story_dropdown.change (element) ->
-    window.location = $(element.srcElement).val() # Change paths on dropdown change
-
   $('.story_content').addClass template_name # FIXME- do in Ruby
