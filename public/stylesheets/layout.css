@@ -28,9 +28,9 @@ hr.invisible {
 .inserted.highlighted { color: #ff69b4;}
 
 #notepad {
+  max-height: 260px;
   margin: 0 auto;
-  height: 400px;
-  width: 200px;
+  padding: 0;
 }
 
 /* #Media Queries
