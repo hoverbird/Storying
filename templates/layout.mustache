@@ -37,14 +37,16 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container minion-pro">
 	  <div class="five columns sidebar">
 	    <h1>Storying</h1>
 	    {{>app/story_selector}}
 	  </div>
 		<div class="eight columns content">
 		  <hr class="invisible">
-		  <div class="story_content">{{{yield}}}</div>
+		  <div class="story_content">
+		    {{{yield}}}
+		  </div>
 		</div>
 	</div>
 
