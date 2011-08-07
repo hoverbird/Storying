@@ -34,6 +34,10 @@ hr.invisible {
 ================================================== */
 .inserted.highlighted { color: #ff69b4;}
 
+select#story_template {
+  width: 155px;
+}
+
 #notepad {
   max-height: 260px;
   margin: 0 auto;
