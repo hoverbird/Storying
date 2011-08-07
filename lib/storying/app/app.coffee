@@ -15,27 +15,13 @@ $(document).ready ->
   $('.insertion_highlighter').click ->
     $('.inserted').toggleClass('highlighted')
 
+  $('.refresher').click ->
+    console.log('yeah!')
+    window.location.reload(true)
+
+
+
   story_dropdown.change (element) ->
     window.location = $(element.srcElement).val() # Change paths on dropdown change
 
   $('.story_content').addClass template_name # FIXME- do in Ruby
-
-  #   # Tabs Activation
-  # tabs.each (i) ->
-  #     # Get all tabs
-  #   tab = $(this).find('> li > a')
-  #   tab.click (e) ->
-  #       # Get Location of tab's content
-  #     contentLocation = $(this).attr('href') + "Tab";
-  #
-  #       # Let go if not a hashed one
-  #     if contentLocation.charAt(0) == "#"
-  #       e.preventDefault()
-  #
-  #         # Make Tab Active
-  #       tab.removeClass('active')
-  #       $(this).addClass('active')
-  #
-  #         # Show Tab Content & add active class
-  #       $(contentLocation).show().addClass('active').siblings().hide().removeClass('active')
-  #

@@ -8,6 +8,10 @@
     $('.insertion_highlighter').click(function() {
       return $('.inserted').toggleClass('highlighted');
     });
+    $('.refresher').click(function() {
+      console.log('yeah!');
+      return window.location.reload(true);
+    });
     story_dropdown.change(function(element) {
       return window.location = $(element.srcElement).val();
     });
