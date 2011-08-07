@@ -20,14 +20,16 @@
 
 h1 { font-family:minion-pro,sans-serif; }
 
-hr.invisible {
-  border-width: 0;
-  margin-top: 13%;
-}
-
 .story_content {
+  margin-top: 10px;
   font-size: 16px;
   font-family: futura-pt, sans-serif;
+}
+
+.nav a img {
+/*  margin: 4px 0;*/
+  padding: 0 4px 0 4px;
+  vertical-align: middle;
 }
 
 /* #Page Styles
@@ -36,6 +38,8 @@ hr.invisible {
 
 select#story_template {
   width: 155px;
+  display: inline;
+  margin-right: 4px;
 }
 
 #notepad {
