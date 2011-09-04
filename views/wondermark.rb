@@ -10,12 +10,9 @@ module Storying
         end
       end
 
-      pass_through :location_adj, :location_noun, :protagonist, :discovery,
-                   :adversary, :assistant, :inventory, :conflict, :title_adj, :title_noun
+      pass_through  :location_adj, :location_noun, :protagonist, :discovery, :adversary, :assistant,
+                    :inventory, :conflict, :title_adj, :title_noun
 
-      # def wonda
-      #   wondermarks["title_adj"].random.inspect
-      # end
     end
   end
 end
