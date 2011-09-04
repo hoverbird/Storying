@@ -29,7 +29,7 @@ Raphael.fn.randomCircle = ->
   radius = random(20)
   x = random(paper.width/2 - radius)
   y = random(paper.height/2 + radius)
-  paper.circle(x, y, radius).attr({fill: paper.randomColor()})
+  paper.circle(x, y, radius).attr fill: paper.randomColor()
 
 random = (max) -> Math.floor(Math.random() * max)
 
