@@ -1,9 +1,7 @@
 Storying
 =============
 
-This is a hack, which can only be defended by pointing out that I am myself a bigger hack than this is (to paraphrase _why).
-
-Storying is a lil' app for generating tons of pretty dubious fiction by combining a bunch of small "story elements" into frameworks that glom them together ("templates"). The goal in this version is to make it stupid simple to throw a bunch of ideas into the system, and then have them recombined and returned to you in unexpected ways.
+Storying is a lil' app for generating tons of pretty dubious fiction by combining a bunch of small "story elements" into frameworks that glom them together ("templates"). The goal in this version is to make it stupid simple to throw a bunch of ideas into the system, and then have them recombined and returned to you in unexpected ways.  It was developed with Christi Ginger and Robin Sloan as an experiment, but it is definitely done now- this approach is no way to find the balance between the unexpected and the coherent.  But it is fun to play with, a bit like a souped up Madlibs.
 
 Up and Running
 -------------
